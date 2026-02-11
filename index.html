@@ -88,7 +88,7 @@
         .floating-bubble img {
             width: 100%;
             height: 100%;
-            object-cover: cover;
+            object-fit: cover;
         }
     </style>
 </head>
@@ -105,58 +105,58 @@
         i18n: {
             en: {
                 banner: 'SECURE YOUR LEGACY BOXES NOW',
-                heroTitle: 'The Symbol of Freedom. A Statement of Strength.',
-                heroSub: 'America is changing. Some people stay silent. Others take a stand. Legacy Boxes isn’t just a collectible — it’s a physical declaration of who you are, what you believe, and where you stand. Own the Symbol. Join the Movement.',
+                heroTitle: 'The Symbol of Freedom. A Declaration of Strength.',
+                heroSub: 'America is changing. Some stay silent. Others take a stand. Legacy Boxes are not just collectibles — they are a physical declaration of who you are, what you believe, and where you stand. Own the symbol. Join the movement.',
                 premium: 'Limited Edition Collectible',
                 applyLabel: 'Freedom',
-                applyCount: 'A tangible reminder',
+                applyCount: 'A tangible reminder of your values.',
                 deliveryLabel: 'Patriot Identity',
-                deliveryTime: 'Show where you stand',
+                deliveryTime: 'Show exactly where you stand.',
                 secureOffer: 'SECURE YOUR LEGACY →',
                 checkPrices: 'CHECK PRICES',
                 
-                movementTitle: 'Legacy Boxes represents pride, independence, and resistance against a world that wants you quiet.',
-                movementText: 'This premium collectible was created for Americans who still believe in: Freedom, Strength, Personal sovereignty, Community, Legacy.',
+                movementTitle: 'Legacy Boxes represent pride, independence, and resistance against a world that wants your silence.',
+                movementText: 'This premium collectible was created for Americans who still believe in: Freedom, Strength, Personal Sovereignty, Community, Legacy.',
                 comebackText: 'You’re not buying a box. You’re claiming your place in America’s comeback.',
                 
                 whyTitle: 'Why Thousands Are Choosing Legacy Boxes',
                 feature1Title: 'Freedom',
-                feature1Sub: 'A tangible reminder of your values — displayed proudly.',
+                feature1Sub: 'A physical symbol of your values — displayed with pride.',
                 feature2Title: 'Patriot Identity',
-                feature2Sub: 'Show exactly where you stand without saying a word.',
+                feature2Sub: 'Make your position unmistakable without saying a word.',
                 feature3Title: 'Premium Craftsmanship',
-                feature3Sub: 'High-end design, elite finish, built to last.',
+                feature3Sub: 'Sophisticated design. High-end finish. Built to last.',
                 feature4Title: 'Fast Priority Shipping',
                 feature4Sub: 'Carefully prepared and shipped from the USA.',
                 
-                selectCountry: 'Select your region to continue',
+                selectCountry: 'Select Your Region to Continue',
                 countryEUA: 'United States',
                 countryCA: 'Canada',
                 countryUK: 'United Kingdom',
                 countryGlobal: 'Global / International',
                 
-                momentTitle: 'This Is Your Moment.',
-                momentSub: 'The weak walk away. The strong stay. Over 150,000 patriots have already visited our store. Now it’s your turn. Every Legacy Box purchased supports freedom initiatives and strengthens a growing community of people who still believe in America.',
+                momentTitle: 'This Is Your Moment',
+                momentSub: 'The weak walk away. The strong remain. Over 150,000 patriots have already visited our store. Now it’s your turn. Every Legacy Box purchased supports freedom initiatives and strengthens a growing community of Americans who still believe in the future of this country.',
                 dontWait: 'Don’t wait. Movements don’t wait.',
                 
                 faqTitle: 'Frequently Asked Questions',
-                q1: 'How often should I use the pen?',
-                a1: 'Legacy Boxes is designed as a premium collectible and symbolic display item. There’s no usage schedule — it represents your values every day.',
-                q2: 'Is the formula professionally tested?',
-                a2: 'Legacy Boxes is crafted with premium materials and quality-controlled manufacturing standards.',
-                q3: 'When will I see results?',
-                a3: 'The moment you receive your box. The impact is instant — pride, belonging, and purpose.',
+                q1: 'What exactly is included in a Legacy Box?',
+                a1: 'Each Legacy Box is a premium collectible item designed for symbolic display and personal expression of patriotic values.',
+                q2: 'Is this an official government product?',
+                a2: 'No. Legacy Boxes are independent collectible items created to represent support for freedom initiatives.',
+                q3: 'How long does shipping take?',
+                a3: 'Orders are prepared within 3–5 business days and shipped with priority service.',
                 
-                footerNote: 'NOTE: Legacy Boxes is a collectible novelty item intended for display and personal symbolism. It does not replace professional or medical consultation. Results may vary.',
+                footerNote: 'NOTE: Legacy Boxes are collectible novelty items intended for display and symbolic personal expression. They are not legal tender and have no monetary or transactional value.',
                 shipping: 'Shipping Policy',
                 guarantee: 'Guarantee',
                 contact: 'Contact',
                 privacy: 'Privacy',
                 modalClose: 'Close',
                 
-                txtShipping: 'Orders are prepared within 3–5 business days. Flat-rate worldwide shipping applies.',
-                txtGuarantee: '30-Day Money Back Guarantee. If you’re not completely satisfied, return your order within 30 days for a full refund. No questions asked.',
-                footerPartner: '© 2026 Legacy Boxes Premium. Parceiro Autorizado: ASTRONARA TRADING FZCO.'
+                txtShipping: 'Orders are prepared within 3–5 business days. Flat-rate priority shipping applies to all orders.',
+                txtGuarantee: '30-Day Money Back Guarantee. If you’re not completely satisfied with your item, return it within 30 days for a full refund. No questions asked.',
+                footerPartner: '© 2026 Legacy Boxes Premium. Authorized Partner: ASTRONARA TRADING FZCO.'
             }
         },
         openPolicy(type, title) { 
@@ -173,7 +173,7 @@
         setInterval(() => { currentSlide = (currentSlide + 1) % slides.length }, 3000)
       ">
 
-    <!-- Barra de Urgência Superior -->
+    <!-- Top Urgency Banner -->
     <div class="gold-bg text-black text-[10px] md:text-xs py-2 text-center font-bold tracking-widest uppercase flex justify-center items-center gap-2 px-4 sticky top-0 z-[70]">
         <span class="flex items-center gap-2">
             <span class="relative flex h-2 w-2">
@@ -184,10 +184,9 @@
         </span>
     </div>
 
-    <!-- Cabeçalho: Logo e Botão CTA -->
+    <!-- Header: Logo and CTA Button -->
     <header class="bg-black/80 backdrop-blur-md sticky top-[32px] md:top-[34px] z-[60] py-4 border-b border-white/5 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
-            <!-- Espaçador invisível para manter o logo centralizado no desktop se desejar, ou apenas layout flex -->
             <div class="w-24 hidden md:block"></div> 
             
             <img src="images/logo-legacybox.png" alt="Legacy Boxes Logo" class="h-8 md:h-12 w-auto object-contain">
@@ -198,17 +197,17 @@
         </div>
     </header>
 
-    <!-- Botão Flutuante (Bolinha) -->
+    <!-- Floating Bubble -->
     <a :href="affiliateLink" target="_blank" class="floating-bubble">
         <img src="images/legacybox2.png" alt="Legacy Box Product">
     </a>
 
     <main class="max-w-7xl mx-auto px-4 md:px-8 pt-12 md:pt-24 pb-16">
         
-        <!-- Seção Hero -->
+        <!-- Hero Section -->
         <section id="hero" class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20 lg:mb-32">
             
-            <!-- Esquerda: Conteúdo de Texto -->
+            <!-- Left: Text Content -->
             <div class="text-center lg:text-left order-2 lg:order-1">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-8">
                     <div class="flex gold-text">
@@ -222,14 +221,13 @@
                 <h2 class="text-4xl md:text-5xl lg:text-7xl font-black leading-[1.1] mb-8 font-serif-display text-white tracking-tighter" x-text="i18n[lang].heroTitle"></h2>
                 <p class="text-lg md:text-xl text-gray-400 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0" x-text="i18n[lang].heroSub"></p>
 
-                <!-- NOVO BOTÃO DE ÂNCORA -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
                     <button @click="document.getElementById('country-selector').scrollIntoView({behavior: 'smooth'})" 
                             class="gold-bg text-black px-10 py-5 rounded-sm font-black uppercase tracking-widest text-sm shadow-xl hover:brightness-110 transition-all transform hover:translate-y-[-2px] active:scale-95 cta-glow text-center" 
                             x-text="i18n[lang].secureOffer"></button>
                 </div>
 
-                <!-- Infos Adicionais -->
+                <!-- Aditional Badges -->
                 <div class="grid grid-cols-2 gap-6 max-w-md mx-auto lg:mx-0 border-t border-white/10 pt-10">
                     <div class="flex items-center gap-4">
                         <div class="w-12 h-12 rounded-sm bg-white/5 flex items-center justify-center gold-text border border-white/10">
@@ -242,7 +240,7 @@
                     </div>
                     <div class="flex items-center gap-4">
                         <div class="w-12 h-12 rounded-sm bg-white/5 flex items-center justify-center gold-text border border-white/10">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
                         </div>
                         <div class="text-left">
                             <div class="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1" x-text="i18n[lang].deliveryLabel"></div>
@@ -252,7 +250,7 @@
                 </div>
             </div>
 
-            <!-- Direita: Carrossel Automático -->
+            <!-- Right: Auto Carousel -->
             <div class="order-1 lg:order-2">
                 <div class="image-container relative">
                     <template x-for="(slide, index) in slides" :key="index">
@@ -278,14 +276,14 @@
             </div>
         </section>
 
-        <!-- Seção do Movimento -->
+        <!-- Movement Section -->
         <section class="max-w-4xl mx-auto text-center mb-32 border-y border-white/5 py-16">
             <h3 class="text-2xl md:text-3xl font-black gold-text mb-6 font-cinzel tracking-tight" x-text="i18n[lang].movementTitle"></h3>
             <p class="text-lg text-gray-400 mb-8 leading-relaxed px-4" x-text="i18n[lang].movementText"></p>
             <p class="text-xl md:text-2xl font-black text-white italic" x-text="i18n[lang].comebackText"></p>
         </section>
 
-        <!-- Seção Porquê Escolher -->
+        <!-- Why Choose Section -->
         <section class="mb-32">
             <h3 class="text-3xl md:text-4xl font-black text-center mb-16 font-serif-display" x-text="i18n[lang].whyTitle"></h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -308,14 +306,14 @@
             </div>
         </section>
 
-        <!-- Seletor de Região -->
+        <!-- Country Selector -->
         <section id="country-selector" class="max-w-4xl mx-auto px-4 mb-32 text-center">
             <h2 class="text-3xl md:text-4xl font-black text-white mb-4 font-serif-display" x-text="i18n[lang].selectCountry"></h2>
             <div class="w-20 h-1 gold-bg mx-auto mb-12"></div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
                 <a :href="affiliateLink" target="_blank" class="group bg-[#0a0a0a] p-6 rounded-sm border border-white/10 hover:border-[#D2B037]/50 transition-all flex items-center gap-6 h-full text-left">
-                    <img src="https://flagcdn.com/w160/us.png" alt="EUA Flag" class="w-12 h-auto rounded-sm">
+                    <img src="https://flagcdn.com/w160/us.png" alt="USA Flag" class="w-12 h-auto rounded-sm">
                     <div>
                         <span class="block text-lg font-black text-white group-hover:gold-text transition-colors" x-text="i18n[lang].countryEUA"></span>
                         <span class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Available Now</span>
@@ -347,7 +345,7 @@
             </div>
         </section>
 
-        <!-- Seção de Impacto -->
+        <!-- Impact Section -->
         <section class="max-w-4xl mx-auto text-center mb-32 bg-white/5 p-12 rounded-sm border border-white/10">
             <h3 class="text-3xl md:text-5xl font-black text-white mb-6 font-serif-display" x-text="i18n[lang].momentTitle"></h3>
             <p class="text-lg text-gray-300 mb-6 leading-relaxed" x-text="i18n[lang].momentSub"></p>
@@ -376,7 +374,7 @@
 
     </main>
 
-    <!-- Rodapé -->
+    <!-- Footer -->
     <footer class="bg-black py-20 px-6 border-t border-white/5">
         <div class="max-w-7xl mx-auto text-center">
             <img src="images/logo-legacybox.png" alt="Legacy Boxes Logo" class="h-8 mx-auto mb-10 object-contain grayscale opacity-80">
@@ -393,7 +391,7 @@
         </div>
     </footer>
 
-    <!-- Modais -->
+    <!-- Modals -->
     <div x-show="showModal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6" x-cloak>
         <div x-show="showModal" @click="showModal = false" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" class="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
         <div x-show="showModal" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0" class="relative bg-[#0a0a0a] w-full max-w-lg p-8 rounded-sm border border-white/10 shadow-2xl">
