@@ -168,7 +168,7 @@
                 countryEUA: 'United States',
                 countryCA: 'Canada',
                 countryUK: 'United Kingdom',
-                countryGlobal: 'Australia / Global',
+                countryGlobal: 'Global',
                 
                 faqTitle: 'Legacy Boxes FAQ',
                 q1: 'What is included in a Legacy Box?',
@@ -176,7 +176,7 @@
                 q2: 'Is this an official government item?',
                 a2: 'No. Legacy Boxes are independent limited-edition items created to represent support for personal freedom initiatives.',
                 q3: 'How long does shipping take?',
-                a3: 'Our Legacy Boxes are prepared within 3–5 business days and shipped via priority service to the USA, CA, UK, and AU.',
+                a3: 'Our Legacy Boxes are prepared within 3–5 business days and shipped via priority service to the USA, CA, UK, and Worldwide.',
 
                 txtTerms: `<b>Returns and Refunds</b><p>Return Policy: We allow for the return or replacement of any defective product within 30 days from the date of purchase.</p><p>Refund Policy: If a customer requests a refund, the money for the requested transaction is refunded back to the customer. You have 30 Days from the date of purchase to return the product to receive your refund. 100% money back guarantee covers price of product only.</p><b>Copyright</b><p>The content, organization, graphics, and design are protected under applicable copyrights and trademarks. Copying or redistribution is prohibited.</p><b>Limited License</b><p>Visitors are granted a non-exclusive license to use the site for personal, non-commercial purposes.</p><b>Disclaimer</b><p>The information is offered as-is. We disclaim any and all liability from the information provided.</p>`,
                 txtPrivacy: `<b>Privacy Policy</b><p>This policy understands how we use and protect the data you provide. We reserve the right to change this policy at any time.</p><b>Collection of Information</b><p>The site does not collect personal information about visitors unless required to fulfill a contractual obligation during purchase.</p><b>Email Usage</b><p>The email provided during order processing may be used for updates and promotions. You can unsubscribe at any time.</p><b>Safeguarding Data</b><p>We are committed to keeping your information secure with modern security measures.</p><b>Contact</b><p>Questions? Contact us at: shareholderspatriots@gmail.com</p>`,
@@ -223,10 +223,10 @@
 
     <main class="max-w-7xl mx-auto px-4 md:px-8 pt-8 md:pt-16 pb-16">
         
-        <!-- Hero Section - Layout Estratégico Desktop -->
+        <!-- Hero Section -->
         <section id="hero" class="flex flex-col lg:grid lg:grid-cols-2 lg:grid-rows-[auto_auto] gap-x-12 lg:gap-y-0 items-center mb-20 lg:mb-32">
             
-            <!-- Título: H1 para SEO (Desktop Alinhado ao Topo da Foto) -->
+            <!-- Título: H1 para SEO -->
             <div class="order-1 lg:col-start-1 lg:row-start-1 text-center lg:text-left lg:self-end lg:pb-4">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-6">
                     <div class="flex gold-text">
@@ -237,7 +237,7 @@
                 <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] mb-2 font-serif-display text-white tracking-tighter" x-text="i18n[lang].heroTitle"></h1>
             </div>
 
-            <!-- Carrossel de Imagens (Desktop: Centralizado no Grid) -->
+            <!-- Carrossel de Imagens -->
             <div class="order-2 lg:col-start-2 lg:row-start-1 lg:row-span-2 w-full max-w-lg mx-auto">
                 <div class="image-container relative">
                     <template x-for="(slide, index) in slides" :key="index">
@@ -260,12 +260,11 @@
                 </div>
             </div>
 
-            <!-- Texto de Apoio e CTA (Desktop Alinhado à Base da Foto) -->
+            <!-- Texto e CTA -->
             <div class="order-3 lg:col-start-1 lg:row-start-2 text-center lg:text-left lg:self-start lg:pt-4 flex flex-col items-center lg:items-start">
                 <p class="text-lg md:text-xl text-gray-400 mb-8 leading-relaxed max-w-xl" x-text="i18n[lang].heroSub"></p>
                 <button @click="document.getElementById('country-selector').scrollIntoView({behavior: 'smooth'})" class="gold-bg text-black px-10 py-5 rounded-sm font-black uppercase tracking-widest text-sm shadow-xl hover:brightness-110 transition-all transform hover:translate-y-[-2px] active:scale-95 cta-glow text-center w-full sm:w-auto mb-10" x-text="i18n[lang].secureOffer"></button>
 
-                <!-- Badges de Patriot Identity -->
                 <div class="grid grid-cols-2 gap-6 w-full max-w-md border-t border-white/10 pt-8">
                     <div class="flex items-center gap-4">
                         <div class="w-12 h-12 rounded-sm bg-white/5 flex items-center justify-center gold-text border border-white/10"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
@@ -288,7 +287,7 @@
         <!-- Movement Section -->
         <section class="max-w-4xl mx-auto text-center mb-32 border-y border-white/5 py-16">
             <h2 class="text-2xl md:text-3xl font-black gold-text mb-6 font-cinzel tracking-tight">The Legacy Box Movement</h2>
-            <p class="text-lg text-gray-400 mb-8 leading-relaxed px-4">Every Legacy Box you purchase supports freedom initiatives. We are building a community of patriots across the USA, Canada, United Kingdom, and Australia committed to securing our future values.</p>
+            <p class="text-lg text-gray-400 mb-8 leading-relaxed px-4">Every Legacy Box you purchase supports freedom initiatives. We are building a community of patriots committed to securing our future values.</p>
             <p class="text-xl md:text-2xl font-black text-white italic">Claim your place in history today.</p>
         </section>
 
@@ -297,21 +296,39 @@
             <h2 class="text-3xl md:text-4xl font-black text-white mb-4 font-serif-display" x-text="i18n[lang].selectCountry"></h2>
             <div class="w-20 h-1 gold-bg mx-auto mb-12"></div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                <!-- EUA -->
                 <a :href="affiliateLink" class="group bg-[#0a0a0a] p-6 rounded-sm border border-white/10 hover:border-[#D2B037]/50 transition-all flex items-center gap-6 h-full text-left">
-                    <img src="https://flagcdn.com/w160/us.png" alt="USA" class="w-12 h-auto rounded-sm">
-                    <div><span class="block text-lg font-black text-white group-hover:gold-text" x-text="i18n[lang].countryEUA"></span><span class="text-[10px] text-gray-500 uppercase font-bold">Fast USA Shipping</span></div>
+                    <img src="https://flagcdn.com/w160/us.png" alt="USA Flag" class="w-12 h-auto rounded-sm">
+                    <div>
+                        <span class="block text-lg font-black text-white group-hover:gold-text" x-text="i18n[lang].countryEUA"></span>
+                        <span class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Fast Shipping</span>
+                    </div>
                 </a>
+                <!-- Canada -->
                 <a :href="affiliateLink" class="group bg-[#0a0a0a] p-6 rounded-sm border border-white/10 hover:border-[#D2B037]/50 transition-all flex items-center gap-6 h-full text-left">
-                    <img src="https://flagcdn.com/w160/ca.png" alt="Canada" class="w-12 h-auto rounded-sm">
-                    <div><span class="block text-lg font-black text-white group-hover:gold-text" x-text="i18n[lang].countryCA"></span><span class="text-[10px] text-gray-500 uppercase font-bold">Canada Express</span></div>
+                    <img src="https://flagcdn.com/w160/ca.png" alt="Canada Flag" class="w-12 h-auto rounded-sm">
+                    <div>
+                        <span class="block text-lg font-black text-white group-hover:gold-text" x-text="i18n[lang].countryCA"></span>
+                        <span class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Express Shipping</span>
+                    </div>
                 </a>
+                <!-- UK -->
                 <a :href="affiliateLink" class="group bg-[#0a0a0a] p-6 rounded-sm border border-white/10 hover:border-[#D2B037]/50 transition-all flex items-center gap-6 h-full text-left">
-                    <img src="https://flagcdn.com/w160/gb.png" alt="UK" class="w-12 h-auto rounded-sm">
-                    <div><span class="block text-lg font-black text-white group-hover:gold-text" x-text="i18n[lang].countryUK"></span><span class="text-[10px] text-gray-500 uppercase font-bold">UK Priority Delivery</span></div>
+                    <img src="https://flagcdn.com/w160/gb.png" alt="UK Flag" class="w-12 h-auto rounded-sm">
+                    <div>
+                        <span class="block text-lg font-black text-white group-hover:gold-text" x-text="i18n[lang].countryUK"></span>
+                        <span class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Fast Shipping</span>
+                    </div>
                 </a>
+                <!-- Global -->
                 <a :href="affiliateLink" class="group bg-[#0a0a0a] p-6 rounded-sm border border-white/10 hover:border-[#D2B037]/50 transition-all flex items-center gap-6 h-full text-left">
-                    <div class="w-12 h-8 bg-white/5 rounded-sm flex items-center justify-center gold-text border border-white/10 group-hover:bg-gold group-hover:text-black"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9h18"></path></svg></div>
-                    <div><span class="block text-lg font-black text-white group-hover:gold-text" x-text="i18n[lang].countryGlobal"></span><span class="text-[10px] text-gray-500 uppercase font-bold">Australia & Global</span></div>
+                    <div class="w-12 h-8 bg-white/5 rounded-sm flex items-center justify-center gold-text border border-white/10 group-hover:bg-gold group-hover:text-black">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9h18"></path></svg>
+                    </div>
+                    <div>
+                        <span class="block text-lg font-black text-white group-hover:gold-text" x-text="i18n[lang].countryGlobal"></span>
+                        <span class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Express Shipping</span>
+                    </div>
                 </a>
             </div>
         </section>
@@ -347,7 +364,7 @@
         </div>
     </footer>
 
-    <!-- Modals -->
+    <!-- Modais -->
     <div x-show="showModal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6" x-cloak>
         <div x-show="showModal" @click="showModal = false" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" class="absolute inset-0 bg-black/90 backdrop-blur-sm"></div>
         <div x-show="showModal" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0" class="relative bg-[#0a0a0a] w-full max-w-2xl max-h-[80vh] overflow-y-auto p-8 rounded-sm border border-white/10 shadow-2xl scrollbar-hide">
