@@ -37,11 +37,11 @@
         .font-serif-display { font-family: 'Playfair Display', serif; }
         .font-cinzel { font-family: 'Cinzel', serif; }
         
-        /* Container de imagem com fundo transparente conforme solicitado */
+        /* Container de imagem com fundo transparente e sem cortes */
         .image-container { 
             border-radius: 2rem; 
             overflow: hidden; 
-            background: transparent; /* Fundo transparente */
+            background: transparent;
             width: 100%; 
             aspect-ratio: 1/1; 
             display: flex; 
@@ -61,7 +61,7 @@
         [x-cloak] { display: none !important; }
         .scrollbar-hide::-webkit-scrollbar { display: none; }
 
-        /* Botão Flutuante - Centralização 100% sem cortes e fundo transparente */
+        /* Botão Flutuante - Alta Qualidade sem cortes */
         .floating-bubble {
             position: fixed;
             bottom: 24px;
@@ -70,7 +70,7 @@
             height: 70px;
             border-radius: 50%;
             border: 2px solid var(--brand-gold);
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(8px);
             z-index: 999;
             overflow: hidden;
@@ -86,17 +86,17 @@
             box-shadow: 0 15px 35px rgba(210, 176, 55, 0.6);
         }
         .floating-bubble img {
-            width: 85%;
-            height: 85%;
+            width: 80%;
+            height: 80%;
             object-fit: contain;
         }
 
-        /* Carousel Image - Ajustado para não cortar em nenhum formato e alta qualidade */
+        /* Carousel Image - Ajustado para não cortar em nenhum formato */
         .carousel-img {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            filter: drop-shadow(0 10px 20px rgba(210, 176, 55, 0.15));
+            filter: drop-shadow(0 15px 30px rgba(210, 176, 55, 0.2));
         }
     </style>
 </head>
@@ -117,11 +117,10 @@
                 heroSub: 'America is changing. Some stay silent. Others take a stand. Legacy Boxes are not just collectibles — they are a physical declaration of who you are, what you believe, and where you stand. Own the symbol. Join the movement.',
                 premium: 'Limited Edition Collectible',
                 applyLabel: 'Freedom',
-                applyCount: 'A tangible reminder of your values.',
+                applyCount: 'A tangible reminder',
                 deliveryLabel: 'Patriot Identity',
-                deliveryTime: 'Show exactly where you stand.',
+                deliveryTime: 'Show exactly where you stand',
                 secureOffer: 'SECURE YOUR LEGACY →',
-                checkPrices: 'CHECK PRICES',
                 
                 movementTitle: 'Legacy Boxes represent pride, independence, and resistance against a world that wants your silence.',
                 movementText: 'This premium collectible was created for Americans who still believe in: Freedom, Strength, Personal Sovereignty, Community, Legacy.',
@@ -181,7 +180,7 @@
         setInterval(() => { currentSlide = (currentSlide + 1) % slides.length }, 3000)
       ">
 
-    <!-- Faixa Superior -->
+    <!-- Top Urgent Banner -->
     <div class="gold-bg text-black text-[10px] md:text-xs py-2 text-center font-bold tracking-widest uppercase flex justify-center items-center gap-2 px-4 sticky top-0 z-[70]">
         <span class="flex items-center gap-2">
             <span class="relative flex h-2 w-2">
@@ -192,29 +191,25 @@
         </span>
     </div>
 
-    <!-- Cabeçalho -->
+    <!-- Cabeçalho (Limpo e Centralizado) -->
     <header class="bg-black/80 backdrop-blur-md sticky top-[32px] md:top-[34px] z-[60] py-4 border-b border-white/5 shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
-            <div class="w-24 hidden md:block"></div> 
+        <div class="max-w-7xl mx-auto px-4 md:px-8 flex justify-center items-center">
             <img src="images/logo-legacybox.png" alt="Legacy Boxes Logo" class="h-8 md:h-12 w-auto object-contain">
-            <button @click="document.getElementById('country-selector').scrollIntoView({behavior: 'smooth'})" 
-                    class="gold-bg text-black px-4 py-2 md:px-6 md:py-2.5 rounded-sm text-[10px] font-black uppercase tracking-widest hover:brightness-110 transition-all active:scale-95 shadow-lg" 
-                    x-text="i18n[lang].checkPrices"></button>
         </div>
     </header>
 
-    <!-- Botão Flutuante -->
+    <!-- Floating Bubble -->
     <a :href="affiliateLink" class="floating-bubble">
         <img src="images/legacybox2.webp" alt="Legacy Box Product">
     </a>
 
     <main class="max-w-7xl mx-auto px-4 md:px-8 pt-8 md:pt-24 pb-16">
         
-        <!-- Hero Section - Estrutura Flex para Reordenamento Mobile -->
+        <!-- Hero Section - Ordem Mobile: Título -> Foto -> Texto -> Botão -->
         <section id="hero" class="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-20 lg:mb-32">
             
-            <!-- 1. TÍTULO (Mobile Order 1) -->
-            <div class="order-1 text-center lg:text-left">
+            <!-- Título (Mobile Order 1 / Desktop Top Left) -->
+            <div class="order-1 lg:col-start-1 lg:row-start-1 text-center lg:text-left">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-6 lg:mb-8">
                     <div class="flex gold-text">
                         <template x-for="i in 5">
@@ -226,8 +221,8 @@
                 <h2 class="text-4xl md:text-5xl lg:text-7xl font-black leading-[1.1] mb-2 font-serif-display text-white tracking-tighter" x-text="i18n[lang].heroTitle"></h2>
             </div>
 
-            <!-- 2. FOTO (Mobile Order 2) com fundo transparente -->
-            <div class="order-2 lg:order-2 lg:row-span-2 w-full max-w-lg mx-auto">
+            <!-- Carrossel (Mobile Order 2 / Desktop Spans Right) -->
+            <div class="order-2 lg:col-start-2 lg:row-start-1 lg:row-span-2 w-full max-w-lg mx-auto">
                 <div class="image-container relative">
                     <template x-for="(slide, index) in slides" :key="index">
                         <div x-show="currentSlide === index" 
@@ -251,15 +246,15 @@
                 </div>
             </div>
 
-            <!-- 3. TEXTO E BOTÃO (Mobile Order 3) -->
-            <div class="order-3 lg:order-1 text-center lg:text-left flex flex-col items-center lg:items-start">
+            <!-- Texto e Botão (Mobile Order 3 / Desktop Bottom Left) -->
+            <div class="order-3 lg:col-start-1 lg:row-start-2 text-center lg:text-left flex flex-col items-center lg:items-start">
                 <p class="text-lg md:text-xl text-gray-400 mb-10 leading-relaxed max-w-xl" x-text="i18n[lang].heroSub"></p>
 
                 <button @click="document.getElementById('country-selector').scrollIntoView({behavior: 'smooth'})" 
                         class="gold-bg text-black px-10 py-5 rounded-sm font-black uppercase tracking-widest text-sm shadow-xl hover:brightness-110 transition-all transform hover:translate-y-[-2px] active:scale-95 cta-glow text-center w-full sm:w-auto mb-12" 
                         x-text="i18n[lang].secureOffer"></button>
 
-                <!-- Badges de Benefícios -->
+                <!-- Benefícios (Badges) -->
                 <div class="grid grid-cols-2 gap-6 w-full max-w-md border-t border-white/10 pt-10">
                     <div class="flex items-center gap-4">
                         <div class="w-12 h-12 rounded-sm bg-white/5 flex items-center justify-center gold-text border border-white/10">
@@ -352,7 +347,7 @@
             </div>
         </section>
 
-        <!-- Moment Section -->
+        <!-- Impact Section -->
         <section class="max-w-4xl mx-auto text-center mb-32 bg-white/5 p-12 rounded-sm border border-white/10">
             <h3 class="text-3xl md:text-5xl font-black text-white mb-6 font-serif-display" x-text="i18n[lang].momentTitle"></h3>
             <p class="text-lg text-gray-300 mb-6 leading-relaxed" x-text="i18n[lang].momentSub"></p>
