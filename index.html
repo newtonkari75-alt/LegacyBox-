@@ -1,23 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <!-- RASTREAMENTO CLARITY -->
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "vfkjpxvicn");
-    </script>
-
-    <!-- RASTREAMENTO KAVRO -->
-    <script src="https://cdn.kavrocdn.com/code/8300-40c54b19-fbde-43c0-a224-8b11fd177c4e"></script>
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     
-    <!-- SEO CANONICAL & HREFLANG TAGS -->
+    <!-- SEO CANONICAL & TAGS HREFLANG -->
     <link rel="canonical" href="https://legacybox.vercel.app/" />
     <link rel="alternate" hreflang="en-US" href="https://legacybox.vercel.app/" />
     
@@ -28,7 +16,7 @@
     <link rel="icon" type="image/png" href="images/legacy-favcon.png">
     <link rel="shortcut icon" type="image/png" href="images/legacy-favcon.png">
 
-    <!-- Scripts -->
+    <!-- Scripts de Terceiros -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -67,8 +55,41 @@
         .gold-bg { background-color: var(--brand-gold); }
         .gold-border { border-color: var(--brand-gold); }
 
+        .cta-glow { 
+            box-shadow: 0 10px 30px -5px rgba(210, 176, 55, 0.5); 
+        }
+
         [x-cloak] { display: none !important; }
         .scrollbar-hide::-webkit-scrollbar { display: none; }
+
+        /* Estilo do Botão Flutuante */
+        .floating-bubble {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 2px solid var(--brand-gold);
+            background-color: #000;
+            z-index: 999;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(210, 176, 55, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .floating-bubble:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 35px rgba(210, 176, 55, 0.6);
+        }
+        .floating-bubble img {
+            width: 100%;
+            height: 100%;
+            object-cover: cover;
+        }
     </style>
 </head>
 <body class="overflow-x-hidden" 
@@ -91,6 +112,8 @@
                 applyCount: 'A tangible reminder',
                 deliveryLabel: 'Patriot Identity',
                 deliveryTime: 'Show where you stand',
+                secureOffer: 'SECURE YOUR LEGACY →',
+                checkPrices: 'CHECK PRICES',
                 
                 movementTitle: 'Legacy Boxes represents pride, independence, and resistance against a world that wants you quiet.',
                 movementText: 'This premium collectible was created for Americans who still believe in: Freedom, Strength, Personal sovereignty, Community, Legacy.',
@@ -129,10 +152,11 @@
                 guarantee: 'Guarantee',
                 contact: 'Contact',
                 privacy: 'Privacy',
+                modalClose: 'Close',
                 
                 txtShipping: 'Orders are prepared within 3–5 business days. Flat-rate worldwide shipping applies.',
                 txtGuarantee: '30-Day Money Back Guarantee. If you’re not completely satisfied, return your order within 30 days for a full refund. No questions asked.',
-                footerPartner: '© 2026 Legacy Boxes Premium. Authorized Partner: ASTRONARA TRADING FZCO.'
+                footerPartner: '© 2026 Legacy Boxes Premium. Parceiro Autorizado: ASTRONARA TRADING FZCO.'
             }
         },
         openPolicy(type, title) { 
@@ -149,7 +173,7 @@
         setInterval(() => { currentSlide = (currentSlide + 1) % slides.length }, 3000)
       ">
 
-    <!-- Top Urgent Banner -->
+    <!-- Barra de Urgência Superior -->
     <div class="gold-bg text-black text-[10px] md:text-xs py-2 text-center font-bold tracking-widest uppercase flex justify-center items-center gap-2 px-4 sticky top-0 z-[70]">
         <span class="flex items-center gap-2">
             <span class="relative flex h-2 w-2">
@@ -160,19 +184,31 @@
         </span>
     </div>
 
-    <!-- Header: Centered Logo -->
+    <!-- Cabeçalho: Logo e Botão CTA -->
     <header class="bg-black/80 backdrop-blur-md sticky top-[32px] md:top-[34px] z-[60] py-4 border-b border-white/5 shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 flex justify-center items-center">
+        <div class="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
+            <!-- Espaçador invisível para manter o logo centralizado no desktop se desejar, ou apenas layout flex -->
+            <div class="w-24 hidden md:block"></div> 
+            
             <img src="images/logo-legacybox.png" alt="Legacy Boxes Logo" class="h-8 md:h-12 w-auto object-contain">
+            
+            <button @click="document.getElementById('country-selector').scrollIntoView({behavior: 'smooth'})" 
+                    class="gold-bg text-black px-4 py-2 md:px-6 md:py-2.5 rounded-sm text-[10px] font-black uppercase tracking-widest hover:brightness-110 transition-all active:scale-95 shadow-lg" 
+                    x-text="i18n[lang].checkPrices"></button>
         </div>
     </header>
 
+    <!-- Botão Flutuante (Bolinha) -->
+    <a :href="affiliateLink" target="_blank" class="floating-bubble">
+        <img src="images/legacybox2.png" alt="Legacy Box Product">
+    </a>
+
     <main class="max-w-7xl mx-auto px-4 md:px-8 pt-12 md:pt-24 pb-16">
         
-        <!-- Hero Section -->
+        <!-- Seção Hero -->
         <section id="hero" class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20 lg:mb-32">
             
-            <!-- Left: Text Content -->
+            <!-- Esquerda: Conteúdo de Texto -->
             <div class="text-center lg:text-left order-2 lg:order-1">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-8">
                     <div class="flex gold-text">
@@ -186,6 +222,14 @@
                 <h2 class="text-4xl md:text-5xl lg:text-7xl font-black leading-[1.1] mb-8 font-serif-display text-white tracking-tighter" x-text="i18n[lang].heroTitle"></h2>
                 <p class="text-lg md:text-xl text-gray-400 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0" x-text="i18n[lang].heroSub"></p>
 
+                <!-- NOVO BOTÃO DE ÂNCORA -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+                    <button @click="document.getElementById('country-selector').scrollIntoView({behavior: 'smooth'})" 
+                            class="gold-bg text-black px-10 py-5 rounded-sm font-black uppercase tracking-widest text-sm shadow-xl hover:brightness-110 transition-all transform hover:translate-y-[-2px] active:scale-95 cta-glow text-center" 
+                            x-text="i18n[lang].secureOffer"></button>
+                </div>
+
+                <!-- Infos Adicionais -->
                 <div class="grid grid-cols-2 gap-6 max-w-md mx-auto lg:mx-0 border-t border-white/10 pt-10">
                     <div class="flex items-center gap-4">
                         <div class="w-12 h-12 rounded-sm bg-white/5 flex items-center justify-center gold-text border border-white/10">
@@ -208,7 +252,7 @@
                 </div>
             </div>
 
-            <!-- Right: Auto Carousel -->
+            <!-- Direita: Carrossel Automático -->
             <div class="order-1 lg:order-2">
                 <div class="image-container relative">
                     <template x-for="(slide, index) in slides" :key="index">
@@ -234,14 +278,14 @@
             </div>
         </section>
 
-        <!-- Movement Section -->
+        <!-- Seção do Movimento -->
         <section class="max-w-4xl mx-auto text-center mb-32 border-y border-white/5 py-16">
             <h3 class="text-2xl md:text-3xl font-black gold-text mb-6 font-cinzel tracking-tight" x-text="i18n[lang].movementTitle"></h3>
             <p class="text-lg text-gray-400 mb-8 leading-relaxed px-4" x-text="i18n[lang].movementText"></p>
             <p class="text-xl md:text-2xl font-black text-white italic" x-text="i18n[lang].comebackText"></p>
         </section>
 
-        <!-- Why Choose Section -->
+        <!-- Seção Porquê Escolher -->
         <section class="mb-32">
             <h3 class="text-3xl md:text-4xl font-black text-center mb-16 font-serif-display" x-text="i18n[lang].whyTitle"></h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -264,34 +308,34 @@
             </div>
         </section>
 
-        <!-- Country Selector -->
+        <!-- Seletor de Região -->
         <section id="country-selector" class="max-w-4xl mx-auto px-4 mb-32 text-center">
             <h2 class="text-3xl md:text-4xl font-black text-white mb-4 font-serif-display" x-text="i18n[lang].selectCountry"></h2>
             <div class="w-20 h-1 gold-bg mx-auto mb-12"></div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                <a :href="affiliateLink" class="group bg-[#0a0a0a] p-6 rounded-sm border border-white/10 hover:border-[#D2B037]/50 transition-all flex items-center gap-6 h-full text-left">
-                    <img src="https://flagcdn.com/w160/us.png" alt="USA Flag" class="w-12 h-auto rounded-sm">
+                <a :href="affiliateLink" target="_blank" class="group bg-[#0a0a0a] p-6 rounded-sm border border-white/10 hover:border-[#D2B037]/50 transition-all flex items-center gap-6 h-full text-left">
+                    <img src="https://flagcdn.com/w160/us.png" alt="EUA Flag" class="w-12 h-auto rounded-sm">
                     <div>
                         <span class="block text-lg font-black text-white group-hover:gold-text transition-colors" x-text="i18n[lang].countryEUA"></span>
                         <span class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Available Now</span>
                     </div>
                 </a>
-                <a :href="affiliateLink" class="group bg-[#0a0a0a] p-6 rounded-sm border border-white/10 hover:border-[#D2B037]/50 transition-all flex items-center gap-6 h-full text-left">
+                <a :href="affiliateLink" target="_blank" class="group bg-[#0a0a0a] p-6 rounded-sm border border-white/10 hover:border-[#D2B037]/50 transition-all flex items-center gap-6 h-full text-left">
                     <img src="https://flagcdn.com/w160/ca.png" alt="Canada Flag" class="w-12 h-auto rounded-sm">
                     <div>
                         <span class="block text-lg font-black text-white group-hover:gold-text transition-colors" x-text="i18n[lang].countryCA"></span>
                         <span class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Express Shipping</span>
                     </div>
                 </a>
-                <a :href="affiliateLink" class="group bg-[#0a0a0a] p-6 rounded-sm border border-white/10 hover:border-[#D2B037]/50 transition-all flex items-center gap-6 h-full text-left">
+                <a :href="affiliateLink" target="_blank" class="group bg-[#0a0a0a] p-6 rounded-sm border border-white/10 hover:border-[#D2B037]/50 transition-all flex items-center gap-6 h-full text-left">
                     <img src="https://flagcdn.com/w160/gb.png" alt="UK Flag" class="w-12 h-auto rounded-sm">
                     <div>
                         <span class="block text-lg font-black text-white group-hover:gold-text transition-colors" x-text="i18n[lang].countryUK"></span>
                         <span class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">VAT Included</span>
                     </div>
                 </a>
-                <a :href="affiliateLink" class="group bg-[#0a0a0a] p-6 rounded-sm border border-white/10 hover:border-[#D2B037]/50 transition-all flex items-center gap-6 h-full text-left">
+                <a :href="affiliateLink" target="_blank" class="group bg-[#0a0a0a] p-6 rounded-sm border border-white/10 hover:border-[#D2B037]/50 transition-all flex items-center gap-6 h-full text-left">
                     <div class="w-12 h-8 bg-white/5 rounded-sm flex items-center justify-center gold-text border border-white/10 group-hover:bg-gold group-hover:text-black">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9h18"></path></svg>
                     </div>
@@ -303,7 +347,7 @@
             </div>
         </section>
 
-        <!-- Moment Section -->
+        <!-- Seção de Impacto -->
         <section class="max-w-4xl mx-auto text-center mb-32 bg-white/5 p-12 rounded-sm border border-white/10">
             <h3 class="text-3xl md:text-5xl font-black text-white mb-6 font-serif-display" x-text="i18n[lang].momentTitle"></h3>
             <p class="text-lg text-gray-300 mb-6 leading-relaxed" x-text="i18n[lang].momentSub"></p>
@@ -332,7 +376,7 @@
 
     </main>
 
-    <!-- Footer -->
+    <!-- Rodapé -->
     <footer class="bg-black py-20 px-6 border-t border-white/5">
         <div class="max-w-7xl mx-auto text-center">
             <img src="images/logo-legacybox.png" alt="Legacy Boxes Logo" class="h-8 mx-auto mb-10 object-contain grayscale opacity-80">
@@ -349,7 +393,7 @@
         </div>
     </footer>
 
-    <!-- Modals -->
+    <!-- Modais -->
     <div x-show="showModal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6" x-cloak>
         <div x-show="showModal" @click="showModal = false" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" class="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
         <div x-show="showModal" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0" class="relative bg-[#0a0a0a] w-full max-w-lg p-8 rounded-sm border border-white/10 shadow-2xl">
