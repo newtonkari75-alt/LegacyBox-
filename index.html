@@ -5,12 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     
-    <!-- SEO CANONICAL & TAGS HREFLANG -->
-    <link rel="canonical" href="https://legacybox.vercel.app/" />
-    <link rel="alternate" hreflang="en-US" href="https://legacybox.vercel.app/" />
+    <!-- ESTRATÉGIA SEO: Title Tag com Palavra-Chave no Início (Máximo 60 caracteres) -->
+    <title>Legacy Box™ | The Official Symbol of Freedom & Strength</title>
     
-    <title>Legacy Boxes - The Symbol of Freedom | Limited Edition</title>
-    <meta name="description" content="Legacy Boxes isn’t just a collectible — it’s a physical declaration of who you are and what you believe. Own the symbol." />
+    <!-- ESTRATÉGIA SEO: Meta Description focada em conversão e semântica -->
+    <meta name="description" content="Get your official Legacy Box. A physical declaration of freedom and strength for patriots. Limited edition collectible available in the USA, CA, UK, and AU." />
+    
+    <meta name="keywords" content="Legacy Box, Legacy Boxes, Freedom Symbol, Patriot Collectible, Limited Edition Box" />
+
+    <!-- SEO CANONICAL & TAGS HREFLANG (Direcionamento Geográfico) -->
+    <link rel="canonical" href="https://legacy-box.vercel.app/" />
+    <link rel="alternate" hreflang="en-US" href="https://legacy-box.vercel.app/" />
+    <link rel="alternate" hreflang="en-CA" href="https://legacy-box.vercel.app/" />
+    <link rel="alternate" hreflang="en-GB" href="https://legacy-box.vercel.app/" />
+    <link rel="alternate" hreflang="en-AU" href="https://legacy-box.vercel.app/" />
+
+    <!-- OPEN GRAPH (Social SEO) -->
+    <meta property="og:title" content="Legacy Box™ | The Symbol of Freedom" />
+    <meta property="og:description" content="Join the movement. Own the physical declaration of freedom and strength." />
+    <meta property="og:url" content="https://legacy-box.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="images/legacybox1.webp" />
+
+    <!-- JSON-LD STRUCTURED DATA (Rich Snippets para o Google) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "Legacy Box",
+      "image": [
+        "https://legacy-box.vercel.app/images/legacybox1.webp",
+        "https://legacy-box.vercel.app/images/legacybox2.webp"
+      ],
+      "description": "Legacy Boxes are premium collectibles serving as a physical declaration of freedom and strength.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Legacy Boxes"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://legacy-box.vercel.app/",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "Legacy Box Official"
+        }
+      }
+    }
+    </script>
 
     <!-- FAVICON -->
     <link rel="icon" type="image/png" href="images/legacy-favcon.png">
@@ -60,7 +103,6 @@
         [x-cloak] { display: none !important; }
         .scrollbar-hide::-webkit-scrollbar { display: none; }
 
-        /* Botão Flutuante */
         .floating-bubble {
             position: fixed;
             bottom: 24px;
@@ -97,7 +139,6 @@
             filter: drop-shadow(0 15px 30px rgba(210, 176, 55, 0.2));
         }
 
-        /* Formatação de Modal */
         .modal-body b { color: var(--brand-gold); display: block; margin-top: 1.5rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; }
         .modal-body p { margin-bottom: 1rem; }
     </style>
@@ -114,37 +155,34 @@
         i18n: {
             en: {
                 banner: 'SECURE YOUR LEGACY BOXES NOW',
-                heroTitle: 'The Symbol of Freedom. A Declaration of Strength.',
-                heroSub: 'America is changing. Some stay silent. Others take a stand. Legacy Boxes are not just collectibles — they are a physical declaration of who you are, what you believe, and where you stand. Own the symbol. Join the movement.',
-                premium: 'Limited Edition Collectible',
+                heroTitle: 'Own the Legacy Box™: The Symbol of Freedom & Strength.',
+                heroSub: 'America is changing. Some stay silent. Others take a stand. Legacy Boxes are more than collectibles — they are a physical declaration of who you are and what you believe. Claim your Legacy Box today.',
+                premium: 'Limited Edition Patriot Collectible',
                 applyLabel: 'Freedom',
                 applyCount: 'A tangible reminder',
                 deliveryLabel: 'Patriot Identity',
                 deliveryTime: 'Show exactly where you stand',
-                secureOffer: 'SECURE YOUR LEGACY →',
+                secureOffer: 'SECURE YOUR LEGACY BOXES →',
                 
-                selectCountry: 'Select Your Region to Continue',
+                selectCountry: 'Select Your Region for Legacy Box Delivery',
                 countryEUA: 'United States',
                 countryCA: 'Canada',
                 countryUK: 'United Kingdom',
-                countryGlobal: 'Global / International',
+                countryGlobal: 'Australia / Global',
                 
-                faqTitle: 'Frequently Asked Questions',
-                q1: 'What exactly is included in a Legacy Box?',
-                a1: 'Each Legacy Box is a premium collectible item designed for symbolic display and personal expression of patriotic values.',
-                q2: 'Is this an official government product?',
-                a2: 'No. Legacy Boxes are independent collectible items created to represent support for freedom initiatives.',
+                faqTitle: 'Legacy Boxes FAQ',
+                q1: 'What is included in a Legacy Box?',
+                a1: 'Each Legacy Box is a premium handcrafted collectible designed for display and personal expression of patriotic values.',
+                q2: 'Is this an official government item?',
+                a2: 'No. Legacy Boxes are independent limited-edition items created to represent support for personal freedom initiatives.',
                 q3: 'How long does shipping take?',
-                a3: 'Orders are prepared within 3–5 business days and shipped with priority service.',
+                a3: 'Our Legacy Boxes are prepared within 3–5 business days and shipped via priority service to the USA, CA, UK, and AU.',
 
-                // Conteúdo Oficial dos Termos
                 txtTerms: `<b>Returns and Refunds</b><p>Return Policy: We allow for the return or replacement of any defective product within 30 days from the date of purchase.</p><p>Refund Policy: If a customer requests a refund, the money for the requested transaction is refunded back to the customer. You have 30 Days from the date of purchase to return the product to receive your refund. 100% money back guarantee covers price of product only.</p><b>Copyright</b><p>The content, organization, graphics, and design are protected under applicable copyrights and trademarks. Copying or redistribution is prohibited.</p><b>Limited License</b><p>Visitors are granted a non-exclusive license to use the site for personal, non-commercial purposes.</p><b>Disclaimer</b><p>The information is offered as-is. We disclaim any and all liability from the information provided.</p>`,
-                
                 txtPrivacy: `<b>Privacy Policy</b><p>This policy understands how we use and protect the data you provide. We reserve the right to change this policy at any time.</p><b>Collection of Information</b><p>The site does not collect personal information about visitors unless required to fulfill a contractual obligation during purchase.</p><b>Email Usage</b><p>The email provided during order processing may be used for updates and promotions. You can unsubscribe at any time.</p><b>Safeguarding Data</b><p>We are committed to keeping your information secure with modern security measures.</p><b>Contact</b><p>Questions? Contact us at: shareholderspatriots@gmail.com</p>`,
-                
                 txtRefund: `<b>Refund Policy</b><p>Our orders are processed by ClickBank. Your statement will show a charge from CLKBANK*LToken.</p><b>30-Day Promise</b><p>If for any reason you are dissatisfied during the first 30 days after purchase, simply return the product and request a full refund — no questions asked.</p><b>Return Address</b><p>224 Carnation Dr Nampa, ID 83687, USA</p><b>Support</b><p>Contact us at shareholderspatriots@gmail.com for any return questions.</p>`,
                 
-                footerDisclaimer: `ClickBank is the retailer of products on this site. CLICKBANK® is a registered trademark of Click Sales, Inc. ClickBank’s role as retailer does not constitute an endorsement or review of these products. Legacy Boxes is an independent creation and has no official affiliation with any government or political organization. This item has no cash value and is intended exclusively as a collectible, novelty, or memorabilia item.`,
+                footerDisclaimer: `ClickBank is the retailer of products on this site. CLICKBANK® is a registered trademark of Click Sales, Inc. Legacy Box and Legacy Boxes are independent creations. This item has no cash value and is intended exclusively as a collectible item to show support for freedom initiatives.`,
                 footerPartner: '© 2026 Legacy Boxes Premium. Authorized Partner: ASTRONARA TRADING FZCO.'
             }
         },
@@ -174,13 +212,13 @@
     <!-- Header -->
     <header class="bg-black/80 backdrop-blur-md sticky top-[32px] md:top-[34px] z-[60] py-4 border-b border-white/5 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 md:px-8 flex justify-center items-center">
-            <img src="images/logo-legacybox.png" alt="Legacy Boxes Logo" class="h-8 md:h-12 w-auto object-contain">
+            <img src="images/logo-legacybox.png" alt="Legacy Box Official Logo" title="Legacy Box" class="h-8 md:h-12 w-auto object-contain">
         </div>
     </header>
 
-    <!-- Floating Bubble -->
-    <a :href="affiliateLink" class="floating-bubble">
-        <img src="images/legacybox2.webp" alt="Legacy Box Product">
+    <!-- Floating CTA -->
+    <a :href="affiliateLink" class="floating-bubble" title="Buy Legacy Box Now">
+        <img src="images/legacybox2.webp" alt="Legacy Boxes Premium Product">
     </a>
 
     <main class="max-w-7xl mx-auto px-4 md:px-8 pt-8 md:pt-24 pb-16">
@@ -188,7 +226,7 @@
         <!-- Hero Section -->
         <section id="hero" class="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-20 lg:mb-32">
             
-            <!-- Título: Ordem 1 Mobile -->
+            <!-- Título: H1 para SEO -->
             <div class="order-1 lg:col-start-1 lg:row-start-1 text-center lg:text-left">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-6 lg:mb-8">
                     <div class="flex gold-text">
@@ -196,10 +234,11 @@
                     </div>
                     <span class="text-[10px] font-bold text-gray-300 uppercase tracking-widest" x-text="i18n[lang].premium"></span>
                 </div>
-                <h2 class="text-4xl md:text-5xl lg:text-7xl font-black leading-[1.1] mb-2 font-serif-display text-white tracking-tighter" x-text="i18n[lang].heroTitle"></h2>
+                <!-- ESTRATÉGIA SEO: H1 com Palavras-Chave Principais -->
+                <h1 class="text-4xl md:text-5xl lg:text-7xl font-black leading-[1.1] mb-2 font-serif-display text-white tracking-tighter" x-text="i18n[lang].heroTitle"></h1>
             </div>
 
-            <!-- Foto: Ordem 2 Mobile -->
+            <!-- Carrossel de Imagens -->
             <div class="order-2 lg:col-start-2 lg:row-start-1 lg:row-span-2 w-full max-w-lg mx-auto">
                 <div class="image-container relative">
                     <template x-for="(slide, index) in slides" :key="index">
@@ -211,7 +250,7 @@
                              x-transition:leave-start="opacity-100 scale-100"
                              x-transition:leave-end="opacity-0 scale-105"
                              class="absolute inset-0 flex items-center justify-center">
-                            <img :src="slide" alt="Legacy Boxes Product" class="carousel-img">
+                            <img :src="slide" alt="Legacy Boxes Limited Edition Display" title="Legacy Box Collectible" class="carousel-img">
                         </div>
                     </template>
                     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-4 z-20">
@@ -222,7 +261,7 @@
                 </div>
             </div>
 
-            <!-- Texto: Ordem 3 Mobile -->
+            <!-- Texto de Apoio e CTA -->
             <div class="order-3 lg:col-start-1 lg:row-start-2 text-center lg:text-left flex flex-col items-center lg:items-start">
                 <p class="text-lg md:text-xl text-gray-400 mb-10 leading-relaxed max-w-xl" x-text="i18n[lang].heroSub"></p>
                 <button @click="document.getElementById('country-selector').scrollIntoView({behavior: 'smooth'})" class="gold-bg text-black px-10 py-5 rounded-sm font-black uppercase tracking-widest text-sm shadow-xl hover:brightness-110 transition-all transform hover:translate-y-[-2px] active:scale-95 cta-glow text-center w-full sm:w-auto mb-12" x-text="i18n[lang].secureOffer"></button>
@@ -248,9 +287,9 @@
 
         <!-- Movement Section -->
         <section class="max-w-4xl mx-auto text-center mb-32 border-y border-white/5 py-16">
-            <h3 class="text-2xl md:text-3xl font-black gold-text mb-6 font-cinzel tracking-tight">Join the Movement for Freedom</h3>
-            <p class="text-lg text-gray-400 mb-8 leading-relaxed px-4">Every token you purchase helps support projects that promote freedom and justice across the globe. Together, we are building a community of patriots committed to preserving our values.</p>
-            <p class="text-xl md:text-2xl font-black text-white italic">Stand with us today and take part in the movement.</p>
+            <h2 class="text-2xl md:text-3xl font-black gold-text mb-6 font-cinzel tracking-tight">The Legacy Box Movement</h2>
+            <p class="text-lg text-gray-400 mb-8 leading-relaxed px-4">Every Legacy Box you purchase supports freedom initiatives. We are building a community of patriots across the USA, Canada, United Kingdom, and Australia committed to securing our future values.</p>
+            <p class="text-xl md:text-2xl font-black text-white italic">Claim your place in history today.</p>
         </section>
 
         <!-- Country Selector -->
@@ -259,27 +298,27 @@
             <div class="w-20 h-1 gold-bg mx-auto mb-12"></div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
                 <a :href="affiliateLink" class="group bg-[#0a0a0a] p-6 rounded-sm border border-white/10 hover:border-[#D2B037]/50 transition-all flex items-center gap-6 h-full text-left">
-                    <img src="https://flagcdn.com/w160/us.png" alt="USA" class="w-12 h-auto rounded-sm">
-                    <div><span class="block text-lg font-black text-white group-hover:gold-text" x-text="i18n[lang].countryEUA"></span><span class="text-[10px] text-gray-500 uppercase font-bold">Available Now</span></div>
+                    <img src="https://flagcdn.com/w160/us.png" alt="USA Flag" class="w-12 h-auto rounded-sm">
+                    <div><span class="block text-lg font-black text-white group-hover:gold-text" x-text="i18n[lang].countryEUA"></span><span class="text-[10px] text-gray-500 uppercase font-bold">Fast USA Shipping</span></div>
                 </a>
                 <a :href="affiliateLink" class="group bg-[#0a0a0a] p-6 rounded-sm border border-white/10 hover:border-[#D2B037]/50 transition-all flex items-center gap-6 h-full text-left">
-                    <img src="https://flagcdn.com/w160/ca.png" alt="Canada" class="w-12 h-auto rounded-sm">
-                    <div><span class="block text-lg font-black text-white group-hover:gold-text" x-text="i18n[lang].countryCA"></span><span class="text-[10px] text-gray-500 uppercase font-bold">Express Shipping</span></div>
+                    <img src="https://flagcdn.com/w160/ca.png" alt="Canada Flag" class="w-12 h-auto rounded-sm">
+                    <div><span class="block text-lg font-black text-white group-hover:gold-text" x-text="i18n[lang].countryCA"></span><span class="text-[10px] text-gray-500 uppercase font-bold">Canada Express</span></div>
                 </a>
                 <a :href="affiliateLink" class="group bg-[#0a0a0a] p-6 rounded-sm border border-white/10 hover:border-[#D2B037]/50 transition-all flex items-center gap-6 h-full text-left">
-                    <img src="https://flagcdn.com/w160/gb.png" alt="UK" class="w-12 h-auto rounded-sm">
-                    <div><span class="block text-lg font-black text-white group-hover:gold-text" x-text="i18n[lang].countryUK"></span><span class="text-[10px] text-gray-500 uppercase font-bold">VAT Included</span></div>
+                    <img src="https://flagcdn.com/w160/gb.png" alt="UK Flag" class="w-12 h-auto rounded-sm">
+                    <div><span class="block text-lg font-black text-white group-hover:gold-text" x-text="i18n[lang].countryUK"></span><span class="text-[10px] text-gray-500 uppercase font-bold">UK Priority Delivery</span></div>
                 </a>
                 <a :href="affiliateLink" class="group bg-[#0a0a0a] p-6 rounded-sm border border-white/10 hover:border-[#D2B037]/50 transition-all flex items-center gap-6 h-full text-left">
                     <div class="w-12 h-8 bg-white/5 rounded-sm flex items-center justify-center gold-text border border-white/10 group-hover:bg-gold group-hover:text-black"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9h18"></path></svg></div>
-                    <div><span class="block text-lg font-black text-white group-hover:gold-text" x-text="i18n[lang].countryGlobal"></span><span class="text-[10px] text-gray-500 uppercase font-bold">Worldwide Delivery</span></div>
+                    <div><span class="block text-lg font-black text-white group-hover:gold-text" x-text="i18n[lang].countryGlobal"></span><span class="text-[10px] text-gray-500 uppercase font-bold">Australia & Global</span></div>
                 </a>
             </div>
         </section>
 
         <!-- FAQ -->
         <section id="faq" class="max-w-3xl mx-auto pb-20">
-            <h3 class="text-4xl font-black text-center mb-16 font-serif-display text-white" x-text="i18n[lang].faqTitle"></h3>
+            <h2 class="text-4xl font-black text-center mb-16 font-serif-display text-white" x-text="i18n[lang].faqTitle"></h2>
             <div class="space-y-4" x-data="{ active: null }">
                 <template x-for="(q, i) in [{q: 'q1', a: 'a1'}, {q: 'q2', a: 'a2'}, {q: 'q3', a: 'a3'}]">
                     <div class="bg-[#0a0a0a] rounded-sm border border-white/5 overflow-hidden shadow-sm hover:border-white/10">
@@ -297,7 +336,7 @@
     <!-- Footer -->
     <footer class="bg-black py-20 px-6 border-t border-white/5">
         <div class="max-w-7xl mx-auto text-center">
-            <img src="images/logo-legacybox.png" alt="Logo" class="h-8 mx-auto mb-10 object-contain grayscale opacity-80">
+            <img src="images/logo-legacybox.png" alt="Legacy Boxes Official Logo" class="h-8 mx-auto mb-10 object-contain grayscale opacity-80">
             <div class="flex flex-wrap justify-center gap-10 mb-16 text-[10px] font-black uppercase text-gray-500 tracking-widest">
                 <button @click="openPolicy('terms')" class="hover:gold-text">Terms and Conditions</button>
                 <button @click="openPolicy('privacy')" class="hover:gold-text">Privacy Policy</button>
